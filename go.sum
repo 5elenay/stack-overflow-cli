@@ -1,0 +1,6 @@
+github.com/5elenay/ezcli v1.2.0 h1:5VtQJkyxqAUhQxF6SADbLkLHkg5shn0cQ3pmaf888e8=
+github.com/5elenay/ezcli v1.2.0/go.mod h1:dlKSmbQb8PdQaLumV1fYw24GApE3yd9gVnu0bPyNddA=
+github.com/pkg/browser v0.0.0-20210706143420-7d21f8c997e2 h1:acNfDZXmm28D2Yg/c3ALnZStzNaZMSagpbr96vY6Zjc=
+github.com/pkg/browser v0.0.0-20210706143420-7d21f8c997e2/go.mod h1:HKlIX3XHQyzLZPlr7++PzdhaXEj94dEiJgZDTsxEqUI=
+golang.org/x/sys v0.0.0-20210616045830-e2b7044e8c71 h1:X/2sJAybVknnUnV7AD2HdT6rm2p5BP6eH2j+igduWgk=
+golang.org/x/sys v0.0.0-20210616045830-e2b7044e8c71/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
