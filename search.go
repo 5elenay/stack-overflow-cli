@@ -18,10 +18,22 @@ func Search(c *ezcli.Command) {
 
 	// Escape Url
 	query := url.QueryEscape(c.CommandData.Arguments[0])
+	var searchOpt string
+
+	// Check options
+	c.FindOption("sort", func(o *ezcli.CommandOption) {
+		if o.Value == "" {
+			o.Value = "activity"
+		} else if !StringSliceContains([]string{"activity", "creation", "votes", "hot", "week", "month"}, o.Value) {
+			log.Fatalf("Error: Invalid sort value: %s", o.Value)
+		}
+
+		searchOpt = o.Value
+	})
 
 	// Get JSON Body and Convert
 	var itemList StackOverflowItemList
-	err := RequestAndUpdate(fmt.Sprintf("https://api.stackexchange.com/search/advanced?site=stackoverflow.com&sort=votes&q=%s", query), &itemList)
+	err := RequestAndUpdate(fmt.Sprintf("https://api.stackexchange.com/search/advanced?site=stackoverflow.com&sort=%s&q=%s", searchOpt, query), &itemList)
 
 	if err != nil {
 		log.Fatalf("Unknown Error: %s", err)

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
 func RequestAndUpdate(url string, data *StackOverflowItemList) error {
@@ -32,4 +33,14 @@ func RequestAndUpdate(url string, data *StackOverflowItemList) error {
 	}
 
 	return nil
+}
+
+func StringSliceContains(slice []string, str string) bool {
+	for _, i := range slice {
+		if strings.EqualFold(i, str) {
+			return true
+		}
+	}
+
+	return false
 }
